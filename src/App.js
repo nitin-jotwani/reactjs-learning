@@ -6,7 +6,9 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Hi, Nitin</h1>
+        <h1>Another Heading</h1>
       </div>
+      // <h1>Another Heading</h1> // THIS WONT WORK, NEST UNDER ONE ELEMENT
     )
   }
 }
