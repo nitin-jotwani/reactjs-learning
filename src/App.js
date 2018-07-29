@@ -26,6 +26,15 @@ class App extends Component {
     // This will override above state
   }
 
+  onChangeHandler = (event) => {
+    this.setState({
+      persons: [
+        {name: 'manu', age:'25'},
+        {name: event.target.value, age:'27'},
+        {name: 'tiku', age:'25'}
+      ]
+    })
+  }
   render() {
     return (
       <div className="App">
@@ -35,7 +44,10 @@ class App extends Component {
           name={this.state.persons[0].name} 
           age={this.state.persons[0].age}
           click={() => this.sampleMethod('Priyonn')}/>
-        <Person name={this.state.persons[1].name} age={this.state.persons[1].age}/>
+        <Person 
+          name={this.state.persons[1].name} 
+          age={this.state.persons[1].age}
+          changed={this.onChangeHandler}/>
         <Person name={this.state.persons[2].name} age={this.state.persons[2].age}>Child Property</Person>
       </div>
     )
